@@ -1,23 +1,6 @@
-import React, { useEffect } from 'react';
-import useUserInfo from '@/hooks/useUserInfo';
-import axios from 'axios';
+import React from 'react';
 
 export default function Home() {
-    const { actions, dispatch } = useUserInfo();
-
-    useEffect(() => {
-        axios
-            .post('http://localhost:8080/user/sign/in', { email: 'jskim91@starlabs.co.kr', passwd: 'test1234@' })
-            .then((res) => {
-                const { id, email, accessToken, name } = res.data.data;
-                dispatch(actions.set({ id, email, token: accessToken, name }));
-
-                setTimeout(() => {
-                    dispatch(actions.init());
-                }, 5000);
-            });
-    }, []);
-
     return (
         <div>
             <h1>홈</h1>
