@@ -1,5 +1,5 @@
-export interface ServerResponse<T = any> {
-    data: T | any;
+export interface ServerResponse<T> {
+    data: T;
     msg: string;
     code: string;
     success: boolean;

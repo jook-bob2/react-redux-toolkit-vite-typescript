@@ -13,19 +13,18 @@ export function createAsyncDispatcher(
         },
         any
     >,
-    promiseFn: (...rest: any) => Promise<AxiosResponse<ServerResponse>>,
+    promiseFn: (...rest: any) => Promise<AxiosResponse<ServerResponse<any>>>,
 ) {
-    const { apiCall, apiCallFailure, apiCallSuccess } = slice.actions;
-
     async function actionHandler(dispatch: Dispatch<AnyAction>, ...rest: any) {
+        const { apiCall, apiCallFailure, apiCallSuccess } = slice.actions;
         dispatch(apiCall());
 
         try {
-            const data = await promiseFn(...rest);
+            const response = await promiseFn(...rest);
 
-            dispatch(apiCallSuccess({ ...data }));
+            dispatch(apiCallSuccess({ ...response.data }));
 
-            return Promise.resolve({ ...data });
+            return Promise.resolve({ ...response.data });
         } catch (e) {
             dispatch(apiCallFailure(e));
 

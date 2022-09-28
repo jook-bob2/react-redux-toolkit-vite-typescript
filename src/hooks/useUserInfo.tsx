@@ -1,6 +1,6 @@
 import { userSlice } from '@/core/store/global/slices/user';
-import { useAppDispatch, useAppSelector } from '@/core/store/global/hooks';
-import { RootState } from '@/core/store/global/store';
+import { useAppDispatch, useAppSelector } from '@/core/store/hooks';
+import { RootState } from '@/core/store/store';
 
 export default function useUserInfo() {
     const userInfo = (state: RootState) => state.userInfo;

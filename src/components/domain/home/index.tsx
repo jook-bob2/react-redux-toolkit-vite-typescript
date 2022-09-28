@@ -1,14 +1,21 @@
-import useUserProvider from '@/core/store/api/providers/user';
-import React, { useEffect } from 'react';
+import React from 'react';
+// import React, { useEffect } from 'react';
+// import useUserProvider from '@/core/store/api/providers/user';
+// import useUserInfo from '@/hooks/useUserInfo';
 
 export default function Home() {
-    const { userLogin } = useUserProvider();
+    // const { userLogin } = useUserProvider();
+    // const { dispatch, actions, userInfo } = useUserInfo();
 
-    useEffect(() => {
-        userLogin.postUserSignIn({ email: 'jskim91@starlabs.co.kr', passwd: 'test1234@' }).then((res) => {
-            console.log('data => ', res.data);
-        });
-    }, []);
+    // useEffect(() => {
+    //     userLogin.postUserSignIn({ email: 'jskim91@starlabs.co.kr', passwd: 'test1234@' }).then((res) => {
+    //         if (res?.success) {
+    //             console.log('res.data => ', res.data);
+    //             const { id, accessToken, email, name, refreshToken } = res.data;
+    //             dispatch(actions.set({ id, accessToken, email, name, refreshToken }));
+    //         }
+    //     });
+    // }, []);
 
     return (
         <div>

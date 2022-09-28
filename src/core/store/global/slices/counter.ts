@@ -1,7 +1,7 @@
-import { fetchCount } from '@/core/api/counter/counterApi';
+import { fetchCount } from '@/core/api/counter/counterAPI';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk, RootState } from '../../store';
 import { initialCounterState } from '../states';
+import { AppThunk, RootState } from '../../store';
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
