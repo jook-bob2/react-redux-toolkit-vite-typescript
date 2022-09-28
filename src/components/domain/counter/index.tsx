@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAppSelector, useAppDispatch } from '@/core/store/hooks';
+import { useAppSelector, useAppDispatch } from '@/core/store/global/hooks';
 import styles from '@styles/counter/Counter.module.scss';
 import {
     decrement,

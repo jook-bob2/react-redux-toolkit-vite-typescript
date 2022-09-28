@@ -45,5 +45,6 @@ module.exports = {
         'no-lonely-if': 0,
         'prefer-promise-reject-errors': 0,
         'prefer-object-spread': 0,
+        '@typescript-eslint/no-explicit-any': 0,
     },
 };

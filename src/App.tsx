@@ -1,13 +1,16 @@
 import React from 'react';
 import '@styles/App.scss';
 import { Provider } from 'react-redux';
-import { store } from './core/store/store';
 import DefaultRouter from './routes/DefaultRouter';
+import { store as globalStore } from './core/store/global/store';
+import { store as apiStore } from './core/store/api/store';
 
 function App() {
     return (
-        <Provider store={store}>
-            <DefaultRouter />
+        <Provider store={globalStore}>
+            <Provider store={apiStore}>
+                <DefaultRouter />
+            </Provider>
         </Provider>
     );
 }

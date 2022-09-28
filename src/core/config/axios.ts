@@ -1,7 +1,8 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 export const BASE_URL = '/app/v1';
-const API_URL = import.meta.env.VITE_API_URL;
+const AUTH_API_URL = import.meta.env.VITE_AUTH_API_URL;
+const NORMAL_API_URL = import.meta.env.VITE_NORMAL_API_URL;
 
 /*
  * axios 인터셉터 설정
@@ -41,6 +42,8 @@ function noneAuthCreate(url: string, options: { authentication: boolean }) {
 }
 
 // 토큰 검증 할 때 사용
-export const authClient = authCreate(API_URL, { authentication: true });
+export const authClient = authCreate(NORMAL_API_URL, { authentication: true });
+
 // 토큰 검증 안 할 때 사용
-export const noneAuthClient = noneAuthCreate(API_URL, { authentication: false });
+export const noneAuthClient = noneAuthCreate(AUTH_API_URL, { authentication: true });
+export const normalClient = noneAuthCreate(NORMAL_API_URL, { authentication: false });

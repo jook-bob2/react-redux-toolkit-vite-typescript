@@ -1,4 +1,4 @@
-import { fetchCount } from '@/core/api/counter/counterAPI';
+import { fetchCount } from '@/core/api/counter/counterApi';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk, RootState } from '../../store';
 import { initialCounterState } from '../states';
