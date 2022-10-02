@@ -1,12 +1,12 @@
-import AboutPage from '@/pages/about';
-import AboutDetailPage from '@/pages/about/detail';
-import CounterPage from '@/pages/counter';
-import HomePage from '@/pages/home';
+import AboutPage from '@/pages/about'
+import AboutDetailPage from '@/pages/about/detail'
+import CounterPage from '@/pages/counter'
+import HomePage from '@/pages/home'
 
 interface RouteType {
-    key: number;
-    path: string;
-    element: () => JSX.Element;
+    key: number
+    path: string
+    element: () => JSX.Element
 }
 
 export const routes: RouteType[] = [
@@ -30,4 +30,4 @@ export const routes: RouteType[] = [
         path: '/counter',
         element: CounterPage,
     },
-];
+]

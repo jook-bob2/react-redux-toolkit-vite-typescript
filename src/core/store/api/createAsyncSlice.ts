@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { initialApiState } from './states';
+import { createSlice } from '@reduxjs/toolkit'
+import { initialApiState } from './states'
 
 export function createAsyncSlice(name: string) {
     return createSlice({
@@ -7,16 +7,16 @@ export function createAsyncSlice(name: string) {
         initialState: initialApiState,
         reducers: {
             apiCall: (state) => {
-                state.loading = true;
+                state.loading = true
             },
             apiCallSuccess: (state, action) => {
-                state.data = action.payload;
-                state.loading = false;
+                state.data = action.payload
+                state.loading = false
             },
             apiCallFailure: (state, action) => {
-                state.error = action.payload;
-                state.loading = false;
+                state.error = action.payload
+                state.loading = false
             },
         },
-    });
+    })
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import AppContainer from '@/containers/AppContainer';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { routes } from './routes';
+import React from 'react'
+import AppContainer from '@/containers/AppContainer'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { routes } from './routes'
 
 export default function DefaultRouter() {
     return (
@@ -14,5 +14,5 @@ export default function DefaultRouter() {
                 </Routes>
             </AppContainer>
         </BrowserRouter>
-    );
+    )
 }

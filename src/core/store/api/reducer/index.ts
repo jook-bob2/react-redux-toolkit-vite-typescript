@@ -1,5 +1,5 @@
-import { userReducers } from '../create/user';
+import { userReducers } from '../create/user'
 
 export const apiReducers = {
     ...userReducers,
-};
+}

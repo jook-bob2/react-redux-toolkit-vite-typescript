@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useAppSelector, useAppDispatch } from '@/core/store/hooks';
-import styles from '@styles/counter/Counter.module.scss';
+import React, { useState } from 'react'
+import { useAppSelector, useAppDispatch } from '@/core/store/hooks'
+import styles from '@styles/counter/Counter.module.scss'
 import {
     decrement,
     increment,
@@ -8,14 +8,14 @@ import {
     incrementByAmount,
     incrementIfOdd,
     selectCount,
-} from '@/core/store/global/slices/counter';
+} from '@/core/store/global/slices/counter'
 
 export function Counter() {
-    const count = useAppSelector(selectCount);
-    const dispatch = useAppDispatch();
-    const [incrementAmount, setIncrementAmount] = useState('2');
+    const count = useAppSelector(selectCount)
+    const dispatch = useAppDispatch()
+    const [incrementAmount, setIncrementAmount] = useState('2')
 
-    const incrementValue = Number(incrementAmount) || 0;
+    const incrementValue = Number(incrementAmount) || 0
 
     return (
         <div className={styles.wrap}>
@@ -46,5 +46,5 @@ export function Counter() {
                 </button>
             </div>
         </div>
-    );
+    )
 }

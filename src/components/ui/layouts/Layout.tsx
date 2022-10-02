@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from '@styles/Layout.module.scss';
+import React from 'react'
+import styles from '@styles/Layout.module.scss'
 
 interface Props {
-    children: React.ReactNode;
+    children: React.ReactNode
 }
 
 export default function Layout({ children }: Props) {
@@ -16,5 +16,5 @@ export default function Layout({ children }: Props) {
                 <span>푸터입니다.</span>
             </footer>
         </div>
-    );
+    )
 }

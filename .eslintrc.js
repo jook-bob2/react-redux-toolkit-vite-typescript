@@ -4,12 +4,13 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
-        ecmaVersion: 13,
+        ecmaVersion: 'latest',
         sourceType: 'module',
     },
     extends: [
@@ -21,8 +22,8 @@ module.exports = {
         'prettier',
     ],
     rules: {
-        'linebreak-style': 0,
         'import/prefer-default-export': 0,
+        'linebreak-style': 0,
         'prettier/prettier': 0,
         'import/extensions': 0,
         'no-use-before-define': 0,
@@ -47,4 +48,4 @@ module.exports = {
         'prefer-object-spread': 0,
         '@typescript-eslint/no-explicit-any': 0,
     },
-};
+}

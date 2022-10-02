@@ -1,28 +1,25 @@
-import { defineConfig, loadEnv } from 'vite';
-import svgrPlugin from 'vite-plugin-svgr';
+import { defineConfig, loadEnv } from 'vite'
+import svgrPlugin from 'vite-plugin-svgr'
 // import { ViteEjsPlugin } from 'vite-plugin-ejs';
-import reactRefresh from '@vitejs/plugin-react-refresh';
-import vitePluginEslint from 'vite-plugin-eslint';
-import viteTsconfigPaths from 'vite-tsconfig-paths';
-import envCompatible from 'vite-plugin-env-compatible';
-import swcReact from 'vite-plugin-swc-react';
+import reactRefresh from '@vitejs/plugin-react-refresh'
+import vitePluginEslint from 'vite-plugin-eslint'
+import viteTsconfigPaths from 'vite-tsconfig-paths'
+import envCompatible from 'vite-plugin-env-compatible'
+import swcReact from 'vite-plugin-swc-react'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-    console.log('mode => ', mode);
     // This changes the out put dir from dist to build
     // comment this out if that isn't relevant for your project
-    const env = loadEnv(mode, process.cwd());
+    const env = loadEnv(mode, process.cwd())
 
     // expose .env as process.env instead of import.meta since jest does not import meta yet
     const envWithProcessPrefix = Object.entries(env).reduce((prev, [key, val]) => {
         return {
             ...prev,
             [`process.env.${key}`]: `"${val}"`,
-        };
-    }, {});
-
-    console.log('env => ', envWithProcessPrefix);
+        }
+    }, {})
 
     return {
         build: {
@@ -56,16 +53,16 @@ export default defineConfig(({ mode }) => {
                             },
                         },
                     },
+                    env: {
+                        // https://vitejs.dev/guide/build.html#browser-compatibility
+                        targets:
+                            'defaults and supports es6-module and supports es6-module-dynamic-import, not opera > 0, not samsung > 0, not and_qq > 0',
+                        mode: 'usage',
+                        coreJs: '3',
+                    },
                 },
             }),
         ],
         define: envWithProcessPrefix,
-        // resolve: {
-        //     alias: {
-        //         '@/': resolve(__dirname, './'),
-        //         '@comp': resolve(__dirname, './src/components'),
-        //         // '@container': resolve(__dirname, './src/containers'),
-        //     },
-        // },
-    };
-});
+    }
+})

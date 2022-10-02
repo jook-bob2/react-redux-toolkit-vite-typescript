@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function About() {
     return (
@@ -6,5 +6,5 @@ export default function About() {
             <h1>소개</h1>
             <p>이 프로젝트는 리액트 라우터 기초를 실습해보는 예제 프로젝트랍니다.</p>
         </div>
-    );
+    )
 }

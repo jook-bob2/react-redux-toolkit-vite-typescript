@@ -1,9 +1,9 @@
-import { CounterState, UserState } from './type';
+import { CounterState, UserState } from './type'
 
 export const initialCounterState: CounterState = {
     value: 0,
     status: 'idle',
-};
+}
 
 export const initialUserState: UserState = {
     id: 0,
@@ -12,4 +12,4 @@ export const initialUserState: UserState = {
     refreshToken: '',
     name: '',
     isLogin: false,
-};
+}
