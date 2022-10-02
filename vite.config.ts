@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
 import svgrPlugin from 'vite-plugin-svgr'
 // import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import reactRefresh from '@vitejs/plugin-react-refresh'
@@ -6,6 +6,7 @@ import vitePluginEslint from 'vite-plugin-eslint'
 import viteTsconfigPaths from 'vite-tsconfig-paths'
 import envCompatible from 'vite-plugin-env-compatible'
 import swcReact from 'vite-plugin-swc-react'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -24,11 +25,12 @@ export default defineConfig(({ mode }) => {
     return {
         build: {
             outDir: 'build',
-            minify: false,
+            minify: 'esbuild',
         },
         plugins: [
             // react(),
             reactRefresh(),
+            splitVendorChunkPlugin(),
             svgrPlugin({
                 svgrOptions: {
                     icon: true,
