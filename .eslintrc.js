@@ -47,5 +47,7 @@ module.exports = {
         'prefer-promise-reject-errors': 0,
         'prefer-object-spread': 0,
         '@typescript-eslint/no-explicit-any': 0,
+        'jsx-a11y/alt-text': 0,
+        'global-require': 0,
     },
 }
