@@ -5,7 +5,7 @@ import { RootState } from '../../store'
 import { useAppDispatch, useAppSelector } from '../../hooks'
 import { POST_USER_SIGN_IN } from '../create/user'
 
-export default function useUserProvider() {
+export default function useUserApi() {
     const userLogin = (state: RootState) => state.userLoginApi
     const dispatch = useAppDispatch()
 

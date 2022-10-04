@@ -4,12 +4,10 @@ import { Provider } from 'react-redux'
 import DefaultRouter from './routes/DefaultRouter'
 import { store } from '@store/store'
 
-function App() {
+export default function App() {
     return (
         <Provider store={store}>
             <DefaultRouter />
         </Provider>
     )
 }
-
-export default App

@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
-import { useAppSelector, useAppDispatch } from '@/core/store/hooks'
 import styles from '@styles/counter/Counter.module.scss'
-import {
-    decrement,
-    increment,
-    incrementAsync,
-    incrementByAmount,
-    incrementIfOdd,
-    selectCount,
-} from '@/core/store/global/slices/counter'
+import useCounterInfo from '@/hooks/useCounterInfo'
 
-export function Counter() {
-    const count = useAppSelector(selectCount)
-    const dispatch = useAppDispatch()
+export default function Counter() {
+    const {
+        count,
+        actions: { decrement, increment, incrementByAmount },
+        incrementAsync,
+        incrementIfOdd,
+        dispatch,
+    } = useCounterInfo()
     const [incrementAmount, setIncrementAmount] = useState('2')
 
     const incrementValue = Number(incrementAmount) || 0

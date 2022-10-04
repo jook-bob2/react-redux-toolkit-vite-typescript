@@ -1,4 +1,4 @@
-import { increment, decrement, incrementByAmount, counterReducer } from '@/core/store/global/slices/counter'
+import { counterReducer, counterSlice } from '@/core/store/global/slices/counter'
 import { CounterState } from '@/core/store/global/states/type'
 
 describe('counter reducer', () => {
@@ -6,6 +6,9 @@ describe('counter reducer', () => {
         value: 3,
         status: 'idle',
     }
+
+    const { decrement, increment, incrementByAmount } = counterSlice.actions
+
     it('should handle initial state', () => {
         expect(counterReducer(undefined, { type: 'unknown' })).toEqual({
             value: 0,
